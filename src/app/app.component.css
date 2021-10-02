@@ -1,0 +1,71 @@
+.container {
+    font-family: 'Century Gothic';
+    color: brown;
+    background-color: floralwhite;
+    border-radius: 20px;
+    border-style: dotted;
+    padding: 30px;
+    margin-top: 100px;
+    position: relative;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+    padding-bottom: 25px;
+    animation-name: change-colors;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+div {
+    font-size: 20px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+#add {
+    margin-right: 20px;
+}
+
+#sub {
+    margin-right: 20px;
+}
+
+#mul {
+    margin-right: 20px;
+}
+
+#div {
+    margin-right: 20px;
+}
+
+#res {
+    font-size: 70px;
+}
+
+@keyframes change-colors {
+    0% {
+      color: #9b2226;
+    }
+  
+    50% {
+      color: #e9c46a;
+    }
+  
+    100% {
+      color: #9b2226;
+    }
+  }
+
+
+
+
+
