@@ -1,32 +1,25 @@
 <div class="container">
-  <h1>{{title}}</h1>
-    <div class="firstNumber">
-      <label for="">First Number</label>
-    </div>
-    <div>
-      <input (input)="getFirstNum(firstNumber.value)" id= "firstNumber" type="text" size="30px" #firstNumber/>
-    </div>
+<h1>{{title}}</h1>
 
-  <br>
+<app-numbers 
+(num1)="num1($event)"
+(num2)="num2($event)"
+(result)="result($event)"
+></app-numbers>
 
-    <div class="secondNumber">
-      <label for="">Second Number</label>
-    </div>
-    <div>
-      <input (input)="getSecondNum(secondNumber.value)" id= "secondNumber" type="text" size="30px" #secondNumber/>
-    </div>
+<app-operation 
+(operation)="operation($event)"
+[num1] = "firstNum"
+[num2]= "secondNum"
+>    
+</app-operation>
 
-  <hr/>
-
-    <div class="buttons jc-center">
-      <button type="button" id="add" class="btn btn-dark" [disabled]="!(firstNumber.value && secondNumber.value)" (click)="getSum()">+</button>
-      <button type="button" id="sub" class="btn btn-dark" [disabled]="!(firstNumber.value && secondNumber.value)" (click)="getDifference()">-</button>
-      <button type="button" id="mul" class="btn btn-dark" [disabled]="!(firstNumber.value && secondNumber.value)" (click)="getProduct()">*</button>
-      <button type="button" id="div" class="btn btn-dark" [disabled]="!(firstNumber.value && secondNumber.value)" (click)="getQuotient()">/</button>
-    </div>
-  <hr/>
-
-    <div id="res" *ngIf="(firstNumber.value && secondNumber.value)" >
-      <output type="text" [value]="result"></output>
-    </div>
+<app-result
+[operation]="oper"
+[num1] = "firstNum"
+[num2]= "secondNum"
+[result]="ans"
+(finalResult)="finalResult($event)"
+>
+</app-result>
 </div>
